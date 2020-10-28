@@ -15,7 +15,7 @@ auth/
 coverage
 
 # Dist
-# dist/
+dist/
 
 # Transpiled files
 build/
