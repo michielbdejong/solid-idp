@@ -1,6 +1,6 @@
 {
   "name": "solid-idp",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A stand-alone Solid IDP, used in for instance solid/web-access-control-tests",
   "engineStrict": true,
   "engines": {
