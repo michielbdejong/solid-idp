@@ -36,6 +36,8 @@
     "@types/koa": "^2.0.48",
     "@types/koa-cors": "0.0.0",
     "@types/koa-router": "^7.0.40",
+    "@types/koa-send": "^4.1.2",
+    "@types/koa-static": "^4.0.1",
     "@types/koa-views": "^2.0.3",
     "@types/nodemailer": "^6.2.1",
     "@types/uuid": "^3.4.5",
@@ -44,6 +46,8 @@
     "koa-body": "^4.1.0",
     "koa-cors": "0.0.16",
     "koa-router": "^7.4.0",
+    "koa-send": "^5.0.1",
+    "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
     "mz": "^2.7.0",
     "nodemailer": "^6.3.0",
@@ -58,6 +62,7 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "mocha": "ts-mocha -p \"tsconfig.json\" test/**/*.ts",
     "coverage": "nyc ts-mocha -p \"tsconfig.json\" test/**/*.ts",
+    "start": "node dist/src/server.js",
     "test": "npm run lint && npm run mocha",
     "copy-template": "copyfiles ./src/**/*.ejs ./dist && copyfiles ./src/**/*.css ./dist"
   }

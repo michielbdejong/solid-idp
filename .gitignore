@@ -3,6 +3,10 @@ logs
 *.log
 npm-debug.log*
 
+# TLS cert
+server.key
+server.cert
+
 # Dependencies
 node_modules
 auth/
@@ -11,6 +15,7 @@ auth/
 coverage
 
 # Dist
+dist/
 
 # Transpiled files
 build/
