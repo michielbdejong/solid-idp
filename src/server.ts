@@ -143,15 +143,15 @@ function getInt (str: string): number | undefined {
 
 export function run () {
   // on startup:
-  const useHttps = !!process.env.HTTPS;
-  const defaultPortForProtocol = (useHttps ? 443 : 80);
-  let portListen = getInt(process.env.PORT);
+  const useHttps = !!process.env.HTTPS
+  const defaultPortForProtocol = (useHttps ? 443 : 80)
+  let portListen = getInt(process.env.PORT)
   if (!portListen) {
-    portListen = defaultPortForProtocol;
+    portListen = defaultPortForProtocol
   }
   let publicPortSuffix = '';
   if (portListen !== defaultPortForProtocol) {
-    publicPortSuffix = `:${portListen}`;
+    publicPortSuffix = `:${portListen}`
   }
   const config: ConstructorOptions = {
     https: useHttps,

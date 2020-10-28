@@ -4,7 +4,6 @@ import cors from 'koa-cors'
 export default class SolidIdp extends Provider {
 
   constructor (issuer: string, config: ProviderConfiguration) {
-    console.log('constructing Solid IDP!', issuer, config);
     super(issuer, {
       ...config,
       features: {
