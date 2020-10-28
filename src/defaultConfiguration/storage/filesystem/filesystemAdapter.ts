@@ -1,6 +1,6 @@
 // Modified code from https://github.com/panva/node-oidc-provider/blob/master/example/adapters/redis.js
 
-import { Adapter } from 'oidc-provider'
+import { Adapter } from 'solid-oidc-provider'
 import path from 'path'
 import fs from 'mz/fs'
 import { DefaultConfigurationConfigs } from '../../defaultConfiguration'

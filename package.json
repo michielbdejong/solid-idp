@@ -1,11 +1,18 @@
 {
   "name": "solid-idp",
   "version": "0.2.2",
-  "description": "The oidc component of the solid server",
+  "description": "A stand-alone Solid IDP, used in for instance solid/web-access-control-tests",
   "engineStrict": true,
   "engines": {
     "node": ">= 8.9.0"
   },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solid/solid-idp"
+  },
+  "homepage": "https://github.com/solid/solid-idp",
+  "bugs": "https://github.com/solid/solid-idp/issues",
   "main": "./dist/src/index.js",
   "typings": "./dist/src/index.d.ts",
   "devDependencies": {
@@ -27,7 +34,6 @@
     "typescript": "^3.4.1"
   },
   "author": "Jackson Morgan",
-  "license": "MIT",
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/debug": "^4.1.5",
@@ -52,6 +58,7 @@
     "mz": "^2.7.0",
     "nodemailer": "^6.3.0",
     "oidc-provider": "michielbdejong/node-oidc-provider-6-custom",
+    "solid-oidc-provider": "^6.5.0",
     "uuid": "^3.3.2"
   },
   "scripts": {
@@ -62,7 +69,7 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "mocha": "ts-mocha -p \"tsconfig.json\" test/**/*.ts",
     "coverage": "nyc ts-mocha -p \"tsconfig.json\" test/**/*.ts",
-    "start": "node dist/src/server.js",
+    "start": "DEBUG=* HTTPS=1 PORT=443 node dist/src/server.js",
     "test": "npm run lint && npm run mocha",
     "copy-template": "copyfiles ./src/**/*.ejs ./dist && copyfiles ./src/**/*.css ./dist"
   }

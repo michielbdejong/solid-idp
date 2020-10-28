@@ -2,7 +2,7 @@
 
 import _ from 'lodash'
 import { Context } from 'koa'
-import { Account } from 'oidc-provider'
+import { Account } from 'solid-oidc-provider'
 
 export default class DefaultConfigAccount implements Account {
   accountId: string

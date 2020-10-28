@@ -2,7 +2,7 @@ import Provider from '../../core/SolidIdp'
 import assert from 'assert'
 import Router from 'koa-router'
 import { Context } from 'koa'
-import { InteractionResult } from 'oidc-provider'
+import { InteractionResult } from 'solid-oidc-provider'
 import { DefaultConfigurationConfigs, DefaultAccountAdapter } from '../defaultConfiguration'
 
 export default function loginInteractionHandler (oidc: Provider, config: DefaultConfigurationConfigs): Router {

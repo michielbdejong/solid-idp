@@ -2,7 +2,7 @@
 
 import Redis from 'ioredis'
 import { isEmpty } from 'lodash'
-import { Adapter } from 'oidc-provider'
+import { Adapter } from 'solid-oidc-provider'
 import { DefaultConfigurationConfigs } from '../../defaultConfiguration'
 
 const REDIS_URL = process.env.REDIS_URL || ''
