@@ -149,7 +149,7 @@ export function run () {
   if (!portListen) {
     portListen = defaultPortForProtocol
   }
-  let publicPortSuffix = '';
+  let publicPortSuffix = ''
   if (portListen !== defaultPortForProtocol) {
     publicPortSuffix = `:${portListen}`
   }
