@@ -72,7 +72,7 @@ const handlers: ((oidc: Provider, config?: DefaultConfigurationConfigs) => Route
 
 export default async function defaultConfiguration (config: DefaultConfigurationConfigs) {
   const pathPrefix = config.pathPrefix || ''
-
+console.log('pathPrefix', pathPrefix)
   if (config.storagePreset) {
     switch (config.storagePreset) {
       case 'redis':

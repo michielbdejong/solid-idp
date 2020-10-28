@@ -92,7 +92,7 @@ export class Server {
     // const testAccount = await nodemailer.createTestAccount()
     const idpRouter = await defaultConfiguration({
       issuer: this.host,
-      pathPrefix: this.host,
+      pathPrefix: '',
       keystore,
       mailConfiguration:
         process.env.EMAIL_USER && process.env.EMAIL_PASS
@@ -143,12 +143,22 @@ function getInt (str: string): number | undefined {
 
 export function run () {
   // on startup:
+  const useHttps = !!process.env.HTTPS;
+  const defaultPortForProtocol = (useHttps ? 443 : 80);
+  let portListen = getInt(process.env.PORT);
+  if (!portListen) {
+    portListen = defaultPortForProtocol;
+  }
+  let publicPortSuffix = '';
+  if (portListen !== defaultPortForProtocol) {
+    publicPortSuffix = `:${portListen}`;
+  }
   const config: ConstructorOptions = {
-    https: !!process.env.HTTPS,
-    portListen: getInt(process.env.PORT),
+    https: useHttps,
+    portListen,
     domain: process.env.DOMAIN || 'localhost',
-    publicPortSuffix: process.env.PUBLIC_PORT_SUFFIX || '',
-    publicProtocolSuffix: process.env.PUBLIC_PROTOCOL_SUFFIX || '',
+    publicPortSuffix,
+    publicProtocolSuffix: (useHttps ? 's' : ''),
     cert: undefined,
     appFolder: 'static/',
     dbFolder: '../.db' // NSS-compatible user database
