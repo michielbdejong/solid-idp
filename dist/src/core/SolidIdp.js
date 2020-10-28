@@ -11,9 +11,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const oidc_provider_1 = __importDefault(require("oidc-provider"));
+const solid_oidc_provider_1 = __importDefault(require("solid-oidc-provider"));
 const koa_cors_1 = __importDefault(require("koa-cors"));
-class SolidIdp extends oidc_provider_1.default {
+class SolidIdp extends solid_oidc_provider_1.default {
     constructor(issuer, config) {
         super(issuer, Object.assign({}, config, { features: Object.assign({}, config.features, { registration: {
                     enabled: true

@@ -1,6 +1,6 @@
 import Router from 'koa-router';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
-import { Adapter, Account } from 'oidc-provider';
+import { Adapter, Account } from 'solid-oidc-provider';
 export interface DefaultAccountAdapter {
     authenticate(username: string, password: string): Promise<Account>;
     create(email: string, password: string, username: string, webID: string): Promise<void>;
